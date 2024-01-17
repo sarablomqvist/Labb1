@@ -1,0 +1,29 @@
+.checkBoxWrapper {
+    position: relative;
+    padding: 10px;
+}
+
+.checkBox {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+    opacity: 0;
+}
+
+.checkBox:checked + .checkboxOverlay {
+    border: 15px solid black;
+}
+
+.checkboxOverlay {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    border: 1px solid gray;
+    border-radius: 20px;
+    margin: 2px;
+    box-sizing: border-box;
+}

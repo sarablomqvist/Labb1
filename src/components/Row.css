@@ -1,0 +1,15 @@
+.row {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    border-bottom: 1px solid #213547;
+}
+
+.item {
+    font-size: 18px;
+}
+
+.itemRemove {
+    position: absolute;
+    right: 20px;
+}

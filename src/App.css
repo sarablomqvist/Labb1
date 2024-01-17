@@ -1,0 +1,20 @@
+.bigBox {
+    border: thick double rgb(12, 15, 17);
+}
+
+.header {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+.hidden {
+    display: none;
+}
+
+.writeHere {
+    font-size: 20px;
+    font-family: monospace;
+    width: 560px;
+    padding: 20px;
+    border: 1px solid #213547;
+}

@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    font-family: monospace;
+    background-color: #e5e5e7;
+}
+
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
