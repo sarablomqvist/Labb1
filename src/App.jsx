@@ -9,9 +9,22 @@ function App() {
 
     const addItem = () => {
         const val = myInput.current.value
-        const nyLista = [...todoItems, val]
+        const newItem = {
+            namn: val,
+            checked: false
+        }
+
+        const nyLista = [...todoItems, newItem]
 
         setTodoItems(nyLista)
+
+        myInput.current.value = ''
+    }
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            addItem()
+        }
     }
 
     const removeItem = (itemToRemove) => {
@@ -24,14 +37,31 @@ function App() {
 
         const nyLista = todoItems.filter(test)
         setTodoItems(nyLista)
+        console.log(nyLista)
+    }
+
+    const checkboxClick = (item) => {
+        const nyLista = [...todoItems]
+
+        const result = nyLista.find((element) => {
+            if (element === item) {
+                return true
+            }
+            return false
+        })
+        if (result.checked === false) {
+            result.checked = true
+        } else {
+            result.checked = false
+        }
+
+        setTodoItems(nyLista)
     }
 
     return (
         <>
             <div>
-                <button onClick={addItem}>
-                    <h1 className="header">todos</h1>
-                </button>
+                <h1 className="header">todos</h1>
             </div>
             <div className="bigBox">
                 <input
@@ -41,9 +71,14 @@ function App() {
                     id="subscribe"
                     name="subscribe"
                     placeholder="What needs to be done?"
+                    onKeyDown={handleKeyDown}
                 ></input>
 
-                <MainContainer todoItems={todoItems} removeItem={removeItem} />
+                <MainContainer
+                    todoItems={todoItems}
+                    removeItem={removeItem}
+                    checkboxClick={checkboxClick}
+                />
 
                 <Footer todoItems={todoItems} />
             </div>

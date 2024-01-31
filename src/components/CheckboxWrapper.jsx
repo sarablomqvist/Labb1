@@ -1,13 +1,20 @@
 import './CheckboxWrapper.css'
 
-function CheckboxWrapper() {
+function CheckboxWrapper(props) {
+    const item = props.item
+
+    const checkboxClick = () => {
+        props.checkboxClick(item)
+    }
+
     return (
         <div className="checkBoxWrapper">
             <input
                 type="checkbox"
                 className="checkBox"
                 name="subscribe"
-            ></input>
+                onClick={checkboxClick}
+            />
             <div className="checkboxOverlay"></div>
         </div>
     )

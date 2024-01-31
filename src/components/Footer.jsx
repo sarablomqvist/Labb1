@@ -1,8 +1,13 @@
-import { useState } from 'react'
 import './Footer.css'
 
 function Footer(props) {
-    const countList = props.todoItems.length
+    const activeItems = props.todoItems.filter((item) => {
+        if (item.checked === false) {
+            return true
+        }
+    })
+
+    const countList = activeItems.length
 
     return (
         <div className="footerBox">
